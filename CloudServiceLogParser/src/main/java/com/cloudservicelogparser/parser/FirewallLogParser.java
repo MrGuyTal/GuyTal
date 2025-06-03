@@ -1,12 +1,8 @@
 package com.cloudservicelogparser.parser;
 
 import com.cloudservicelogparser.model.CloudServiceResolutionMap;
-import com.cloudservicelogparser.model.FirewallLogEntry;
-import com.cloudservicelogparser.parser.FirewallLogFields;
 import com.cloudservicelogparser.resolver.ReverseDnsResolver;
 import com.cloudservicelogparser.filter.FilterChain;
-import com.cloudservicelogparser.filter.IpFilter;
-import com.cloudservicelogparser.filter.UserFilter;
 import java.io.*;
 import java.util.*;
 import java.util.regex.*;

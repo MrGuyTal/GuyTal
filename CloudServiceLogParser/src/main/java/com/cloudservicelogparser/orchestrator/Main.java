@@ -21,6 +21,7 @@ public class Main {
         List<IpRange> excludeRanges = Arrays.asList(new IpRange("11.11.12.0/24"));
         IpFilter ipFilter = new IpFilter(includeRanges, excludeRanges);
 
+        // TODO filters should be configurable via command line arguments or a config file
         List<Pattern> userIncludes = Collections.emptyList();
         List<Pattern> userExcludes = Arrays.asList(Pattern.compile("^sys.*"));
         UserFilter userFilter = new UserFilter(userIncludes, userExcludes);
@@ -33,10 +34,19 @@ public class Main {
         cloudServiceResolutionMap = new FirewallLogParser(resolver, filters, cloudServiceResolutionMap).parse(logFile);
 
         Map<String, String> resolvedDomains = cloudServiceResolutionMap.getResolvedDomains();
+        System.out.println("Resolved Domains:");
         for (String domain : cloudServiceResolutionMap.getResolvedDomains().keySet()) {
             System.out.println(domain + ": " + resolvedDomains.get(domain));
         }
 
         // Checkpoint 4: Concurrency
+        // TODO work in progress, did not have enough time to fully test it, but seems to be working fine based on the output
+        cloudServiceResolutionMap = new ConcurrentFirewallLogParser(resolver, filters, cloudServiceResolutionMap).parse(logFile);
+        resolvedDomains = cloudServiceResolutionMap.getResolvedDomains();
+        System.out.println();
+        System.out.println("Resolved Domains concurrently:");
+        for (String domain : cloudServiceResolutionMap.getResolvedDomains().keySet()) {
+            System.out.println(domain + ": " + resolvedDomains.get(domain));
+        }
     }
 }

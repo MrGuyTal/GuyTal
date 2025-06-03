@@ -11,6 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 // TODO add unit tests to cover the rest of the functionality
 
-class AnalyzerTest {
+class ParserTest {
 
 }
