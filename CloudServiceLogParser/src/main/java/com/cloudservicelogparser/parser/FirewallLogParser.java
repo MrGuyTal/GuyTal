@@ -31,11 +31,7 @@ public class FirewallLogParser {
             String line;
             // read line by line, so we don't load the entire file into memory, as the requirement is to handle huge files
             while ((line = br.readLine()) != null) {
-                Matcher matcher = KEY_VALUE_PATTERN.matcher(line);
-                Map<String, String> fields = new HashMap<>();
-                while (matcher.find()) {
-                    fields.put(matcher.group(1), matcher.group(2));
-                }
+                Map<String, String> fields = parseLine(line);
                 String srcIp = fields.get(FirewallLogFields.SRC);
                 String dstIp = fields.get(FirewallLogFields.DST);
 
@@ -65,7 +61,11 @@ public class FirewallLogParser {
 
                 // Checkpoint 2: Reverse DNS lookup if domain is missing
                 if (domain == null && dstIp != null) {
-                    domain = reverseDnsResolver.resolve(dstIp);
+                    try {
+                        domain = reverseDnsResolver.resolve(dstIp);
+                    } catch (Exception e) {
+                        System.err.println("Failed to resolve domain for IP " + dstIp + ": " + e.getMessage());
+                    }
                 }
 
                 if (srcIp == null || dstIp == null) {
@@ -80,5 +80,14 @@ public class FirewallLogParser {
             }
         }
         return cloudServiceResolutionMap;
+    }
+
+    private Map<String, String> parseLine(String line) {
+        Matcher matcher = KEY_VALUE_PATTERN.matcher(line);
+        Map<String, String> fields = new HashMap<>();
+        while (matcher.find()) {
+            fields.put(matcher.group(1), matcher.group(2));
+        }
+        return fields;
     }
 }
