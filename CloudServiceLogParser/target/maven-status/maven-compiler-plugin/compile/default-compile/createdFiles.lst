@@ -1,0 +1,13 @@
+com/cloudservicelogparser/analyzer/CloudServiceAnalyzer.class
+com/cloudservicelogparser/model/CloudServiceResolutionMap.class
+com/cloudservicelogparser/resolver/ReverseDnsResolver.class
+com/cloudservicelogparser/parser/FirewallLogFields.class
+com/cloudservicelogparser/model/FirewallLogEntry.class
+com/cloudservicelogparser/filter/IpFilter.class
+com/cloudservicelogparser/filter/UserFilter.class
+com/cloudservicelogparser/filter/IpRange.class
+com/cloudservicelogparser/parser/FirewallLogParser.class
+com/cloudservicelogparser/parser/CloudServiceLogParser.class
+com/cloudservicelogparser/filter/FilterChain.class
+com/cloudservicelogparser/orchestrator/Main.class
+com/cloudservicelogparser/model/CloudServiceEntry.class

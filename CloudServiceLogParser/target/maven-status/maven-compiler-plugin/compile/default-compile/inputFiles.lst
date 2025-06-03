@@ -1,0 +1,13 @@
+/Users/guyta/Dev/Dev/GuyTal/CloudServiceLogParser/src/main/java/com/cloudservicelogparser/model/CloudServiceEntry.java
+/Users/guyta/Dev/Dev/GuyTal/CloudServiceLogParser/src/main/java/com/cloudservicelogparser/parser/CloudServiceLogParser.java
+/Users/guyta/Dev/Dev/GuyTal/CloudServiceLogParser/src/main/java/com/cloudservicelogparser/filter/IpFilter.java
+/Users/guyta/Dev/Dev/GuyTal/CloudServiceLogParser/src/main/java/com/cloudservicelogparser/filter/FilterChain.java
+/Users/guyta/Dev/Dev/GuyTal/CloudServiceLogParser/src/main/java/com/cloudservicelogparser/filter/UserFilter.java
+/Users/guyta/Dev/Dev/GuyTal/CloudServiceLogParser/src/main/java/com/cloudservicelogparser/analyzer/CloudServiceAnalyzer.java
+/Users/guyta/Dev/Dev/GuyTal/CloudServiceLogParser/src/main/java/com/cloudservicelogparser/parser/FirewallLogFields.java
+/Users/guyta/Dev/Dev/GuyTal/CloudServiceLogParser/src/main/java/com/cloudservicelogparser/parser/FirewallLogParser.java
+/Users/guyta/Dev/Dev/GuyTal/CloudServiceLogParser/src/main/java/com/cloudservicelogparser/orchestrator/Main.java
+/Users/guyta/Dev/Dev/GuyTal/CloudServiceLogParser/src/main/java/com/cloudservicelogparser/model/FirewallLogEntry.java
+/Users/guyta/Dev/Dev/GuyTal/CloudServiceLogParser/src/main/java/com/cloudservicelogparser/model/CloudServiceResolutionMap.java
+/Users/guyta/Dev/Dev/GuyTal/CloudServiceLogParser/src/main/java/com/cloudservicelogparser/resolver/ReverseDnsResolver.java
+/Users/guyta/Dev/Dev/GuyTal/CloudServiceLogParser/src/main/java/com/cloudservicelogparser/filter/IpRange.java
